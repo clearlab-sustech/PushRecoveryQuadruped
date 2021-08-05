@@ -1,0 +1,18 @@
+ssh user@10.0.0.34
+cd robot-software/build/
+bash ./run_mc.sh ./mit_ctrl 
+
+
+cd Desktop/mc-demo-old/scripts/
+bash ./config_network_lcm.sh lenovo
+
+
+
+bash ../scripts/send_to_mini_cheetah.sh user/MIT_Controller/mit_ctrl
+sim/sim
+
+scp user@10.0.0.34:/home/user/Desktop/expdata.txt /home/nimapng/Desktop/experiment/results/trotting/ && mv /home/nimapng/Desktop/experiment/results/trotting/expdata.txt /home/nimapng/Desktop/exp/results/trotting/$(date +%Y-%m-%d_%H:%M:%S).txt
+
+scp user@10.0.0.34:/home/user/Desktop/expdata.txt /home/leggedrobot/Desktop/exp/
+
+scp -r user@10.0.0.34:/home/user/robot-software /home/leggedrobot/Desktop/exp/
