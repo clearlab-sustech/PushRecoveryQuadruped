@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="Clear_Dog_Ros" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0010375 0.0028956 -0.20119" rpy="0 0 0" />
+      <mass value="3.574" />
+      <inertia ixx="0.013521" ixy="3.9909E-07" ixz="5.6943E-07" iyy="0.013158" iyz="5.4499E-05" izz="0.0049923" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="fl_hip_link">
+    <inertial>
+      <origin xyz="-0.015462 0.13285 0.036159" rpy="0 0 0" />
+      <mass value="1.7334" />
+      <inertia ixx="0.002063" ixy="0.00051812" ixz="-3.0598E-07" iyy="0.0016358" iyz="6.8369E-06" izz="0.003467" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fl_hip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fl_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fl_abad_joint" type="revolute">
+    <origin xyz="0.06 -0.010469 0" rpy="3.1416 -1.546 0" />
+    <parent link="base_link" />
+    <child link="fl_hip_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="fl_upper_link">
+    <inertial>
+      <origin xyz="0.068958 0.04374 0.032675" rpy="0 0 0" />
+      <mass value="1.0446" />
+      <inertia ixx="0.00086218" ixy="5.2877E-07" ixz="-0.00026838" iyy="0.0026738" iyz="4.5535E-08" izz="0.0018984" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fl_upper_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fl_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fl_hip_joint" type="revolute">
+    <origin xyz="0 0.093531 0.020018" rpy="1.5708 0 -2.0402" />
+    <parent link="fl_hip_link" />
+    <child link="fl_upper_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="fl_lower_link">
+    <inertial>
+      <origin xyz="-0.13489 -2.1555E-06 0.020708" rpy="0 0 0" />
+      <mass value="0.10655" />
+      <inertia ixx="1.1611E-05" ixy="1.9897E-09" ixz="-4.8172E-09" iyy="0.00030441" iyz="-1.7195E-09" izz="0.00031317" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fl_lower_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fl_lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fl_knee_link" type="revolute">
+    <origin xyz="0.28978 0.03778 0.077646" rpy="-1.5708 1.5464 0" />
+    <parent link="fl_upper_link" />
+    <child link="fl_lower_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="fr_hip_link">
+    <inertial>
+      <origin xyz="0.029777 0.13505 0.036159" rpy="0 0 0" />
+      <mass value="1.7334" />
+      <inertia ixx="0.0021091" ixy="-0.00049151" ixz="1.9862E-07" iyy="0.0015897" iyz="6.8988E-06" izz="0.003467" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fr_hip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fr_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr_abad_joint" type="revolute">
+    <origin xyz="-0.06 0 0" rpy="3.1416 1.5022 0" />
+    <parent link="base_link" />
+    <child link="fr_hip_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="fr_upper_link">
+    <inertial>
+      <origin xyz="0.068958 0.063758 0.032675" rpy="0 0 0" />
+      <mass value="1.0446" />
+      <inertia ixx="0.00086218" ixy="5.2877E-07" ixz="-0.00026838" iyy="0.0026738" iyz="4.5535E-08" izz="0.0018984" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fr_upper_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fr_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr_hip_joint" type="revolute">
+    <origin xyz="0 0.104 0" rpy="1.5708 0 0.12911" />
+    <parent link="fr_hip_link" />
+    <child link="fr_upper_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="fr_lower_link">
+    <inertial>
+      <origin xyz="-0.13489 -2.1526E-06 -0.032727" rpy="0 0 0" />
+      <mass value="0.10655" />
+      <inertia ixx="1.1611E-05" ixy="1.9919E-09" ixz="-4.8176E-09" iyy="0.00030441" iyz="-1.7202E-09" izz="0.00031317" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fr_lower_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/fr_lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr_knee_joint" type="revolute">
+    <origin xyz="0.28978 0.045767 0.077646" rpy="-1.5708 -1.0114 3.1416" />
+    <parent link="fr_upper_link" />
+    <child link="fr_lower_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="hl_hip_link">
+    <inertial>
+      <origin xyz="0.015462 0.44337 0.036159" rpy="0 0 0" />
+      <mass value="1.7334" />
+      <inertia ixx="0.002063" ixy="0.00051812" ixz="3.0583E-07" iyy="0.0016358" iyz="6.0248E-06" izz="0.003467" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hl_hip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hl_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hl_abad_joint" type="revolute">
+    <origin xyz="0.06 0.0033239 0" rpy="0 1.5227 0" />
+    <parent link="base_link" />
+    <child link="hl_hip_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="hl_upper_link">
+    <inertial>
+      <origin xyz="0.068958 0.063407 0.032675" rpy="0 0 0" />
+      <mass value="1.0446" />
+      <inertia ixx="0.00086218" ixy="5.2877E-07" ixz="-0.00026838" iyy="0.0026738" iyz="4.5536E-08" izz="0.0018984" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hl_upper_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hl_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hl_hip_joint" type="revolute">
+    <origin xyz="0 0.49068 0.00035107" rpy="1.5708 0 0.045087" />
+    <parent link="hl_hip_link" />
+    <child link="hl_upper_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="hl_lower_link">
+    <inertial>
+      <origin xyz="-0.13489 -2.1525E-06 0.030191" rpy="0 0 0" />
+      <mass value="0.10655" />
+      <inertia ixx="1.1611E-05" ixy="1.9919E-09" ixz="-4.8175E-09" iyy="0.00030441" iyz="-1.7201E-09" izz="0.00031317" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hl_lower_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hl_lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hl_knee_joint" type="revolute">
+    <origin xyz="0.28978 0.047964 0.077646" rpy="1.5708 1.1044 -3.1416" />
+    <parent link="hl_upper_link" />
+    <child link="hl_lower_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="hr_hip_link">
+    <inertial>
+      <origin xyz="-0.029777 0.29481 0.036159" rpy="0 0 0" />
+      <mass value="1.7334" />
+      <inertia ixx="0.0021091" ixy="-0.00049151" ixz="-1.9878E-07" iyy="0.0015897" iyz="5.9629E-06" izz="0.003467" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hr_hip_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hr_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hr_abad_joint" type="revolute">
+    <origin xyz="-0.06 0.16015 0" rpy="-3.1416 -1.5382 3.1416" />
+    <parent link="base_link" />
+    <child link="hr_hip_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="hr_upper_link">
+    <inertial>
+      <origin xyz="0.068958 0.059441 0.032675" rpy="0 0 0" />
+      <mass value="1.0446" />
+      <inertia ixx="0.00086218" ixy="5.2877E-07" ixz="-0.00026838" iyy="0.0026738" iyz="4.5536E-08" izz="0.0018984" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hr_upper_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hr_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hr_hip_joint" type="revolute">
+    <origin xyz="0 0.33385 0.0043176" rpy="1.5708 0 2.8972" />
+    <parent link="hr_hip_link" />
+    <child link="hr_upper_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+  <link name="hr_lower_link">
+    <inertial>
+      <origin xyz="-0.13489 -2.1533E-06 -0.028964" rpy="0 0 0" />
+      <mass value="0.10655" />
+      <inertia ixx="1.1611E-05" ixy="1.9913E-09" ixz="-4.8175E-09" iyy="0.00030441" iyz="-1.72E-09" izz="0.00031317" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hr_lower_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Clear_Dog_Ros/meshes/hr_lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hr_knee_joint" type="revolute">
+    <origin xyz="0.28978 0.045213 0.077646" rpy="-1.5708 -1.0632 -3.1416" />
+    <parent link="hr_upper_link" />
+    <child link="hr_lower_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="30" velocity="630" />
+  </joint>
+</robot>
